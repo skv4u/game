@@ -1,1 +1,160 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+    background: #ffffff;
+    font-size: 14px;
+    font-family: Roboto-Regular, Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #555555
+}
+
+.container {
+    background-color: #f3f3f3;
+    height: 100vh;
+}
+
+.card {
+    padding: 15px;
+    margin: 10px;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+    border-radius: 4px;
+}
+
+.center {
+    text-align: center
+}
+
+.top20 {
+    margin-top: 20px;
+}
+
+.top10 {
+    margin-top: 10px;
+}
+
+.top5 {
+    margin-top: 5px;
+}
+
+.success-msg {
+    font-size: 18px;
+    color: #555;
+}
+
+.error {
+    color: #ff0000;
+}
+
+hr {
+    margin-left: -15px;
+    width: 350px;
+}
+
+.font11 {
+    font-size: 11px;
+}
+
+.font12 {
+    font-size: 12px;
+}
+
+.font13 {
+    font-size: 13px;
+}
+
+.checkbox label:after,
+.radio label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.checkbox .cr,
+.radio .cr {
+    position: relative;
+    display: inline-block;
+    border: 1.6px solid #a9a9a9;
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 15px;
+}
+
+.radio .cr {
+    border-radius: 50%;
+}
+
+.checkbox .cr .cr-icon,
+.radio .cr .cr-icon {
+    position: absolute;
+    font-size: .8em;
+    line-height: 0;
+    top: 50%;
+    left: 20%;
+}
+
+.radio .cr .cr-icon {
+    margin-left: 0.04em;
+}
+
+.checkbox label input[type="checkbox"],
+.radio label input[type="radio"] {
+    display: none;
+}
+
+.checkbox label input[type="checkbox"]+.cr>.cr-icon,
+.radio label input[type="radio"]+.cr>.cr-icon {
+    /* transform: scale(3) rotateZ(-20deg); */
+    opacity: 0;
+    /* transition: all .3s ease-in; */
+}
+
+.checkbox label input[type="checkbox"]:checked+.cr>.cr-icon,
+.radio label input[type="radio"]:checked+.cr>.cr-icon {
+    /* transform: scale(1) rotateZ(0deg); */
+    opacity: 1;
+}
+
+.checkbox label input[type="checkbox"]:disabled+.cr,
+.radio label input[type="radio"]:disabled+.cr {
+    opacity: .5;
+}
+
+.checkbox label {
+    cursor: pointer;
+}
+
+.checkbox {
+    padding: 0px 0px 17px 0px;
+}
+
+select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #999999;
+    color: #666666;
+}
+
+.image-description {
+    margin-top: 7px;
+}
+
+.left {
+    text-align: left;
+}
+
+.show {
+    display: inline-block;
+}
+
+.hide {
+    display: none;
+}
+
+.hiddenbtn {
+    opacity: 0;
+    height: 0;
+    display: inherit;
+}
