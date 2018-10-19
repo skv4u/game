@@ -1,3 +1,20 @@
-<p>
-  home works!
-</p>
+<div class="container">
+    <app-header></app-header>
+    <section>
+        <article *ngFor="let game of gameList" (click)="naviateToURL(game.URL)">
+            <div class="image"><img [src]="game.Image" /> </div>
+            <p class="title">{{game.Name}}</p>
+            <p class="description font11">{{game.Description}}</p>
+            <div class="bottom">
+                <button><i class="fa fa-heart"></i> {{game.Likes}}</button>
+                <button><i class="fa fa-heartbeat"></i> {{game.Dislikes}}</button>
+                <button><i class="fa fa-comment"></i> {{game.Comments}}</button>
+            </div>
+        </article>
+
+    </section>
+    <footer>
+
+    </footer>
+
+</div>

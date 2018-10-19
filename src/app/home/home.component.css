@@ -1,0 +1,37 @@
+.container article {
+    background-color: #fff;
+    width: 180px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+    text-align: center;
+    border: 1px solid #bf4747;
+    display: inline-block;
+    cursor: pointer
+}
+
+.container article div.image {
+    border-radius: 50%;
+    overflow: hidden;
+    padding: -10px 0px 0px 0px;
+    display: inline-block;
+    height: 128px;
+    width: 140px;
+}
+
+.container article .title {
+    color: #bf4747;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.container article .bottom button {
+    background: #fff;
+    color: #bf4747;
+    border: 1px solid #bf4747;
+    padding: 4px;
+    margin: 3px;
+    font-weight: bold;
+    border-radius: 3px;
+}

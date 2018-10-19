@@ -1,0 +1,22 @@
+.logo {
+    margin-left: 10px;
+    display: inline-block
+}
+
+header {
+    border-bottom: 2px solid #bf4747;
+    background: #e28e8e;
+    color: #fff;
+    padding: 7px;
+}
+
+header .icon {
+    float: right;
+}
+
+header button {
+    background: #e28e8e;
+    color: #fff;
+    border: none;
+    padding: 3px 10px 4px 10px;
+}
