@@ -184,9 +184,12 @@ select {
 }
 
 .table {
-    width: 100%;
-    max-width: 100%;
+    width: 97%;
+    /* max-width: 100%; */
     margin-bottom: 20px;
+    background: #fff;
+    padding: 10px;
+    margin: 10px;
 }
 
 table {
@@ -226,4 +229,13 @@ td {
 td,
 th {
     padding: 0;
+}
+
+.button {
+    background-color: #bf4747;
+    padding: 15px 25px 15px 25px;
+    color: #fff;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 10em / 9em;
 }

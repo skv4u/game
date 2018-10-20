@@ -4,29 +4,28 @@
         <div class="split left">
             <table class="table table-bordered">
                 <tbody>
-                    <tr>
-                        <td><img class="originalimage" data-name="umbrella" src="img/umbrella.png" style="display:none"> <img class="openimage" src="./../assets/images/memory/q.png"> </td>
-                        <td><img class="originalimage" data-name="tree" src="img/tree.png" style="display:none"> <img class="openimage" src="img/q.png"> </td>
-                        <td><img class="originalimage" data-name="car" src="img/car.png" style="display:none"> <img class="openimage" src="img/q.png"> </td>
+                    <tr *ngFor="let m of dataList let i=index">
+                        <td>
+                            <img class="clickable" *ngIf="m.IsBlank1Visible" [src]="imagePath + 'q.png'" (click)="visibleImage('image1',i)">
+                            <img *ngIf="m.IsImage1Visible" [src]="imagePath + m.image1">
+                            <img *ngIf="m.IsNone1Visible" [src]="imagePath + 'none.png'">
+                        </td>
+                        <td>
+                            <img class="clickable" *ngIf="m.IsBlank2Visible" [src]="imagePath + 'q.png'" (click)="visibleImage('image2',i)">
+                            <img *ngIf="m.IsImage2Visible" [src]="imagePath + m.image2">
+                            <img *ngIf="m.IsNone2Visible" [src]="imagePath + 'none.png'">
+                        </td>
+                        <td>
+                            <img class="clickable" *ngIf="m.IsBlank3Visible" [src]="imagePath + 'q.png'" (click)="visibleImage('image3',i)">
+                            <img *ngIf="m.IsImage3Visible" [src]="imagePath + m.image3">
+                            <img *ngIf="m.IsNone3Visible" [src]="imagePath +'none.png'">
+                        </td>
                     </tr>
-                    <tr>
-                        <td><img class="originalimage" data-name="mobile" src="img/mobile.png" style="display:none"> <img class="openimage" src="img/q.png"> </td>
-                        <td><img class="originalimage" data-name="heart" src="img/heart.png" style="display:none"> <img class="openimage" src="img/q.png"> </td>
-                        <td><img class="originalimage" data-name="tree" src="img/tree.png" style="display:none"> <img class="openimage" src="img/q.png"> </td>
-                    </tr>
-                    <tr>
-                        <td><img class="originalimage" data-name="heart" src="img/heart.png" style="display:none"> <img class="openimage" src="img/q.png"> </td>
-                        <td><img class="originalimage" data-name="umbrella" src="img/umbrella.png" style="display:none"> <img class="openimage" src="img/q.png"> </td>
-                        <td><img class="originalimage" data-name="sleeper" src="img/sleeper.png" style="display:none"> <img class="openimage" src="img/q.png"> </td>
-                    </tr>
-                    <tr>
-                        <td><img class="originalimage" data-name="mobile" src="img/mobile.png" style="display:none"> <img class="openimage" src="img/q.png"> </td>
-                        <td><img class="originalimage" data-name="sleeper" src="img/sleeper.png" style="display:none"> <img class="openimage" src="img/q.png"> </td>
-                        <td><img class="originalimage" data-name="car" src="img/car.png" style="display:none"> <img class="openimage" src="img/q.png"> </td>
-                    </tr>
-                    <tr></tr>
                 </tbody>
             </table>
+            <div class="center">
+                <button class="button" (click)="start()">START</button>
+            </div>
         </div>
 
         <div class="split right">
