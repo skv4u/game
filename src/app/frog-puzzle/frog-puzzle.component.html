@@ -1,3 +1,32 @@
-<p>
-  frog-puzzle works!
-</p>
+<div class="container">
+    <app-header></app-header>
+    <section>
+        <div class="split left">
+
+
+            <ul>
+                <li *ngFor="let m of list let i=index" (click)="move(m,i)">
+                    <img [src]="imagePath + m" />
+                </li>
+                <!-- <li><img src="./../assets/images/frog/right.png" /></li>
+                <li><img src="./../assets/images/frog/right.png" /></li>
+                <li><img src="./../assets/images/frog/blank.jpg" /></li>
+                <li><img src="./../assets/images/frog/left.png" /></li>
+                <li><img src="./../assets/images/frog/left.png" /></li>
+                <li><img src="./../assets/images/frog/left.png" /></li> -->
+            </ul>
+
+            <div class="center">
+                <button class="button" (click)="start()">START</button>
+            </div>
+        </div>
+
+        <div class="split right">
+            right container
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+
+</div>

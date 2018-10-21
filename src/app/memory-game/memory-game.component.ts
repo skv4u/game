@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from './../shared/common.service';
 
 @Component({
   selector: 'app-memory-game',
   templateUrl: './memory-game.component.html',
-  styleUrls: ['./memory-game.component.css']
+  styleUrls: ['./memory-game.component.css'],
+  providers:[CommonService]
 })
 export class MemoryGameComponent implements OnInit {
 
@@ -14,18 +16,18 @@ export class MemoryGameComponent implements OnInit {
     'car.png', 'heart.png', 'mobile.png', 'sleeper.png', 'umbrella.png','tree.png','car.png', 'heart.png', 'mobile.png', 'sleeper.png', 'umbrella.png','tree.png'
   ];
   saved:string='';
-  savedIndex:number =0;
+  savedIndex:number = 0;
   // rows:number[]=[1,2,]
   dataList:any[]=[];
   shuffleImageList: string[] = [];
   imagePath:string = './../assets/images/memory/';
-  constructor() { }
+  constructor(private cs:CommonService) { }
 
   ngOnInit() {
     this.listShuffleImageList();
   }
   listShuffleImageList() {
-    let suffledList:string[]=this.shuffle(this.imageList);
+    let suffledList:string[]=this.cs.shuffle(this.imageList);
    
     
     this.dataList = this.makeAllHideShow(suffledList,true,false);
@@ -157,23 +159,13 @@ export class MemoryGameComponent implements OnInit {
   start(){
     this.saved = '';
     this.savedIndex =0;
-    let suffledList:string[]=this.shuffle(this.imageList);     
+    let suffledList:string[]=this.cs.shuffle(this.imageList);     
      this.dataList = this.makeAllHideShow(suffledList,false,true);
      setTimeout(()=>{
       this.dataList = this.makeAllHideShow(suffledList,true,false);
       
      },3000)
   }
-  shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
-    while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-    return array;
-  }
+  
 
 }

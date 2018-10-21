@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'memory-game', component: MemoryGameComponent },
-  { path: 'arrange-number', component: MemoryGameComponent },
+  { path: 'arrange-number', component: ArrangeNumberComponent },
   { path: 'scrumble-word', component: ScrumbleWordComponent },
   { path: 'frog-puzzle', component: FrogPuzzleComponent },
   { path: '**', redirectTo: 'home' }

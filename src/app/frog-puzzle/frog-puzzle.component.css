@@ -1,0 +1,17 @@
+ul {
+    list-style: none;
+    display: flex
+}
+
+li {
+    /* background: #fff; */
+    padding: 10px;
+    cursor: pointer;
+}
+
+ul li img {
+    border-radius: 17%;
+    width: 92px;
+    border: 1px solid #e3e3e3;
+    padding: 7px;
+}

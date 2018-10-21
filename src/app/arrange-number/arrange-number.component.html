@@ -1,3 +1,33 @@
-<p>
-  arrange-number works!
-</p>
+<div class="container">
+    <app-header></app-header>
+    <section>
+        <div class="split left">
+
+            <div class="numbers" *ngFor="let m of dataList let i=index">
+                <!-- <button *ngIf="m.name=='X'" class="numberbox btn {{m.class}}" style="cursor:default">{{m.name}}</button> -->
+                <button class="numberbox btn {{m.class}}" (click)="swapNumber(m,i)">{{m.name}}</button>
+            </div>
+            <!-- <div class="numbers"><button class="numberbox btn btn-primary">2</button></div>
+            <div class="numbers"><button class="numberbox btn btn-primary">3</button></div>
+            <div class="numbers"><button class="numberbox btn btn-primary">4</button></div>
+            <div class="numbers"><button class="numberbox btn btn-primary">5</button></div>
+            <div class="numbers"><button class="numberbox btn btn-primary">6</button></div>
+            <div class="numbers"><button class="numberbox btn btn-primary">7</button></div>
+            <div class="numbers"><button class="numberbox btn btn-primary">8</button></div>
+            <div class="numbers"><button class="numberbox btn btn-default">X</button></div> -->
+
+
+            <div class="center">
+                <button class="button" (click)="start()">START</button>
+            </div>
+        </div>
+
+        <div class="split right">
+            right container
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+
+</div>
