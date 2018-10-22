@@ -1,3 +1,44 @@
-<p>
-  scrumble-word works!
-</p>
+<div class="container">
+    <!-- <app-header></app-header> -->
+    <section>
+        <div class="split left">
+
+            <table class="table table-bordered">
+                <tr *ngFor="let m of dataList">
+                    <td style="vertical-align: middle;"><span>{{m.scrumble}}</span></td>
+                    <td><input type="text" [(ngModel)]="m.userInput" (keyup)="maxLengthValidate($event,m.underscoreLength,m.userInput)">
+                        <div class="underscore-main">
+                            <span class="underscore" *ngFor="let x of m.underscoreLength"></span>
+                            <!-- <span class="underscore"></span>
+                            <span class="underscore"></span>
+                            <span class="underscore"></span> -->
+                        </div>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td style="vertical-align: middle;"><span>TEST</span></td>
+                    <td><input type="text" maxlength="4">
+                        <div class="underscore-main">
+                            <span class="underscore"></span>
+                            <span class="underscore"></span>
+                            <span class="underscore"></span>
+                            <span class="underscore"></span>
+
+                        </div>
+                    </td>
+                </tr> -->
+            </table>
+            <div class="center">
+                <!-- <button class="button" (click)="start()">START</button> -->
+            </div>
+        </div>
+
+        <div class="split right">
+            right container
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+
+</div>
