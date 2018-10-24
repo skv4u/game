@@ -1,92 +1,20 @@
-.login-card {
-    padding: 15px;
-    margin: 0 auto;
-    background: #fff;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .3);
-    border-radius: 4px;
-    width: 70%;
-    position: relative;
-    top: 14%;
+.sign-up {
+    width: 64%;
+    display: inline-block;
+    margin-left: 37%;
+    text-align: center
 }
 
-.sign-in-content {
+.sign-up-content {
     width: 35%;
-    /* display: inline-block; */
+    display: inline-block;
     text-align: center;
     vertical-align: top;
     background: #bf4747;
     top: -1px;
     position: absolute;
     height: 284px;
-    right: 0px;
-    /* left 0*/
+    left: 0px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-}
-
-.sign-in-content header {
-    font-size: 36px;
-    color: #fff;
-    font-weight: bold;
-    margin-top: 30px;
-}
-
-.sign-in-content p {
-    color: #fff;
-    font-size: 12px;
-    padding: 30px;
-}
-
-.sign-in-content button {
-    padding: 15px 25px 15px 25px;
-    color: #fff;
-    letter-spacing: 2px;
-    border: 1px solid #fff;
-    border-radius: 10em / 9em;
-    background: #bf4747;
-}
-
-.sign-in {
-    width: 64%;
-    display: inline-block;
-    text-align: center;
-    /* position: relative;
-    left: 275px; */
-}
-
-.sign-in header {
-    font-size: 36px;
-    font-weight: bold;
-    color: #bf4747;
-    padding: 10px;
-    text-align: center;
-    letter-spacing: 2px;
-}
-
-.input {
-    padding: 10px;
-    display: inline-block;
-    /* width: 37%; */
-    background: #e3e3e3;
-    border: 1px solid #b3adad;
-    border-radius: 4px;
-    width: 75%;
-}
-
-.sign-in .button {
-    background-color: #bf4747;
-    padding: 15px 25px 15px 25px;
-    color: #fff;
-    letter-spacing: 2px;
-    border: none;
-    border-radius: 10em / 9em;
-}
-
-.forgot-link {
-    margin-top: 12px;
-    border: none;
-    background-color: #fff;
-    border-bottom: 1px solid #BF4747;
-    line-height: 18px;
-    cursor: pointer;
 }

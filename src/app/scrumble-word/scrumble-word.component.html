@@ -1,21 +1,35 @@
 <div class="container">
     <!-- <app-header></app-header> -->
     <section>
-        <div class="split left">
+        <div class="split left" style="height:max-content">
+            <div class="top-refresh">
+                <button (click)="start()"><i class="fa fa-sync-alt"></i></button>
+            </div>
+            <div class="top-save">
+                <button (click)="validate()"><i class="fa fa-check"></i></button>
+            </div>
+            <div class="divbox" *ngFor="let m of dataList">
+                <div class="header">{{m.scrumble}}</div>
+                <div class="center">
+                    <span *ngFor="let x of m.wordList">
+                        <input id="input{{x.idCounter}}" type="text" maxlength="1" [(ngModel)]="x.char" (keydown)=restrictKey($event,x.idCounter)>
+                    </span>
+                </div>
+                <div class="validate success" *ngIf="isValidate && m.IsCorrect"><i class="fa fa-check-circle"></i></div>
+                <div class="validate wrong" *ngIf="isValidate && !m.IsCorrect"><i class="fa fa-times-circle"></i></div>
+            </div>
 
-            <table class="table table-bordered">
-                <tr *ngFor="let m of dataList">
+
+            <!-- <tr *ngFor="let m of dataList">
                     <td style="vertical-align: middle;"><span>{{m.scrumble}}</span></td>
-                    <td><input type="text" [(ngModel)]="m.userInput" (keyup)="maxLengthValidate($event,m.underscoreLength,m.userInput)">
+                    <td><input type="text" [(ngModel)]="m.userInput" (keydown)="maxLengthValidate($event,m.wordList.length,m.userInput)">
                         <div class="underscore-main">
-                            <span class="underscore" *ngFor="let x of m.underscoreLength"></span>
-                            <!-- <span class="underscore"></span>
-                            <span class="underscore"></span>
-                            <span class="underscore"></span> -->
+                            <span class="underscore" *ngFor="let x of m.wordList"></span>
+                           
                         </div>
                     </td>
-                </tr>
-                <!-- <tr>
+                </tr> -->
+            <!-- <tr>
                     <td style="vertical-align: middle;"><span>TEST</span></td>
                     <td><input type="text" maxlength="4">
                         <div class="underscore-main">
@@ -27,10 +41,8 @@
                         </div>
                     </td>
                 </tr> -->
-            </table>
-            <div class="center">
-                <!-- <button class="button" (click)="start()">START</button> -->
-            </div>
+            <!-- </table> -->
+
         </div>
 
         <div class="split right">
