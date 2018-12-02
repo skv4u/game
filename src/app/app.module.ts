@@ -20,6 +20,8 @@ import { ScrumbleWordComponent } from './scrumble-word/scrumble-word.component';
 import { FrogPuzzleComponent } from './frog-puzzle/frog-puzzle.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { CallBreakComponent } from './call-break/call-break.component';
+
 //Route Paths
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -29,6 +31,7 @@ const routes: Routes = [
   { path: 'arrange-number', component: ArrangeNumberComponent },
   { path: 'scrumble-word', component: ScrumbleWordComponent },
   { path: 'frog-puzzle', component: FrogPuzzleComponent },
+  { path: 'call-break', component: CallBreakComponent },
   { path: '**', redirectTo: 'home' }
 ];
 
@@ -44,6 +47,7 @@ const routes: Routes = [
     ArrangeNumberComponent,
     ScrumbleWordComponent,
     FrogPuzzleComponent,
+    CallBreakComponent,
     HeaderComponent,
     FooterComponent
   ],

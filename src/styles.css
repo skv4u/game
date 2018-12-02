@@ -145,14 +145,6 @@ select {
     text-align: left;
 }
 
-.show {
-    display: inline-block;
-}
-
-.hide {
-    display: none;
-}
-
 .hiddenbtn {
     opacity: 0;
     height: 0;
@@ -416,4 +408,16 @@ th {
     border-bottom: 1px solid #BF4747;
     line-height: 18px;
     cursor: pointer;
+}
+
+.show {
+    display: inline-block;
+}
+
+.hide {
+    display: none;
+}
+
+button {
+    cursor: pointer
 }

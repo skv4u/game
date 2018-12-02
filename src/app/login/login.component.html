@@ -9,16 +9,17 @@
         <div class="sign-in-content" *ngIf="isSigninVisible">
             <header>Hello, Friend! </header>
             <p class="sub-title">Enter your personal details and start with us</p>
-            <p><button class="">SIGN UP</button></p>
+            <p><button (click)="showHide(false)">SIGN UP</button></p>
         </div>
         <div class="sign-up-content" *ngIf="!isSigninVisible">
             <header>Welcome Back! </header>
             <p class="sub-title">To keep connected with us please login with your credentials</p>
-            <p><button class="">SIGN IN</button></p>
+            <p><button (click)="showHide(true)">SIGN IN</button></p>
         </div>
         <div class="sign-up" *ngIf="!isSigninVisible">
             <header>Create Account</header>
-            <p><input class="sign-up-input" type="text" placeholder="Email">
+            <p><input class="sign-up-input" type="text" placeholder="Name">
+                <input class="sign-up-input" type="text" placeholder="Email">
                 <input class="sign-up-input" type="text" placeholder="Mobile">
                 <input class="sign-up-input" type="text" placeholder="Passcode"></p>
             <p><button class="button top20">SIGN UP</button></p>
@@ -29,4 +30,4 @@
     </div>
 </div>
 
-<button (click)="toggle()">Toggle</button>
+<!-- <button (click)="toggle()">Toggle</button> -->

@@ -69,4 +69,13 @@ GetMethod(args: string, urltype: string = 'Operation') {
     }
     return array;
   }
+  genericSort(data, key) {
+    return data.sort((a: any, b: any) => {
+      if (a[key] > b[key]) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
+  }
 }

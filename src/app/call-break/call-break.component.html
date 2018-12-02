@@ -1,0 +1,52 @@
+<div class="container">
+    <app-header></app-header>
+    <section>
+        <div style="width:90%">
+            <ul class="user-one">
+                <li *ngFor="let m of user1 let i=index" [class]="m.type" (click)="selectCard(m)">
+                    <div class="outline shadow rounded">
+                        <div class="top"><span class="block">{{m.name}}</span><span class="block">&hearts;</span></div>
+                        <h1>&hearts;</h1>
+                        <div class="bottom"><span class="block">&hearts;</span><span class="block">{{m.name}}</span></div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="user-two">
+                <li *ngFor="let m of user1 let i=index" [class]="m.type" (click)="selectCard(m)">
+                    <div class="outline shadow rounded">
+                        <div class="top"><span>{{m.name}}</span><span>&hearts;</span></div>
+                        <h1>&hearts;</h1>
+                        <div class="bottom"><span>&hearts;</span><span class="mirror-text">{{m.name}}</span></div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="user-three">
+                <li *ngFor="let m of user1 let i=index" [class]="m.type" (click)="selectCard(m)">
+                    <div class="outline shadow rounded">
+                        <div class="top"><span>{{m.name}}</span><span>&hearts;</span></div>
+                        <h1>&hearts;</h1>
+                        <div class="bottom"><span>&hearts;</span><span class="mirror-text">{{m.name}}</span></div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="user-four">
+                <li *ngFor="let m of user1 let i=index" [class]="m.type" (click)="selectCard(m)">
+                    <div class="outline shadow rounded">
+                        <div class="top"><span class="block">{{m.name}}</span><span class="block">&hearts;</span></div>
+                        <h1>&hearts;</h1>
+                        <div class="bottom"><span class="block">&hearts;</span><span class="block">{{m.name}}</span></div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="center">
+                <button class="button" (click)="start()">START</button>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+
+    </footer>
+
+</div>

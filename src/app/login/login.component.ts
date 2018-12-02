@@ -14,4 +14,7 @@ export class LoginComponent implements OnInit {
   toggle(){
   this.isSigninVisible = !this.isSigninVisible;
   }
+  showHide(flag:boolean){
+    this.isSigninVisible = flag;
+  }
 }

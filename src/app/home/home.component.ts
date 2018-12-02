@@ -13,7 +13,7 @@ gameList:any[]=[
   {"ID":3,"Name":"Scrumble word","Description":"Scrumble word to find the correct word","Likes":8,"Dislikes":4,"Comments":10,"Image":"./../assets/images/blank.jpg","URL":"scrumble-word"},
   {"ID":4,"Name":"Frog Puzzle","Description":"Frog Puzzle with flip flop, which will track users memory power","Likes":8,"Dislikes":4,"Comments":10,"Image":"./../assets/images/blank.jpg","URL":"frog-puzzle"},
   {"ID":5,"Name":"Snakes","Description":"Memory Game with flip flop, which will track users memory power","Likes":8,"Dislikes":4,"Comments":10,"Image":"./../assets/images/blank.jpg","URL":"memory-game"},
-  {"ID":6,"Name":"Call Break","Description":"Memory Game with flip flop, which will track users memory power","Likes":8,"Dislikes":4,"Comments":10,"Image":"./../assets/images/blank.jpg","URL":"memory-game"},
+  {"ID":6,"Name":"Call Break","Description":"Memory Game with flip flop, which will track users memory power","Likes":8,"Dislikes":4,"Comments":10,"Image":"./../assets/images/blank.jpg","URL":"call-break"},
   {"ID":7,"Name":"Teen Patti","Description":"Memory Game with flip flop, which will track users memory power","Likes":8,"Dislikes":4,"Comments":10,"Image":"./../assets/images/blank.jpg"}
 ]
   constructor(public router: Router) { }

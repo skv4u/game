@@ -2,12 +2,18 @@
     width: 64%;
     display: inline-block;
     margin-left: 37%;
-    text-align: center
+    text-align: center;
+    height: 253px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
 }
 
 .sign-up-content {
     width: 35%;
-    display: inline-block;
+    /* display: inline-block; */
     text-align: center;
     vertical-align: top;
     background: #bf4747;
@@ -17,4 +23,18 @@
     left: 0px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.sign-up-input {
+    border: none;
+    border-bottom: 1px solid #bf4747;
+    padding: 7px;
+    margin: 10px 11px 8px 13px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
 }

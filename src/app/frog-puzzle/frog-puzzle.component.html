@@ -2,18 +2,10 @@
     <app-header></app-header>
     <section>
         <div class="split left">
-
-
             <ul>
                 <li *ngFor="let m of list let i=index" (click)="move(m,i)">
                     <img [src]="imagePath + m" />
                 </li>
-                <!-- <li><img src="./../assets/images/frog/right.png" /></li>
-                <li><img src="./../assets/images/frog/right.png" /></li>
-                <li><img src="./../assets/images/frog/blank.jpg" /></li>
-                <li><img src="./../assets/images/frog/left.png" /></li>
-                <li><img src="./../assets/images/frog/left.png" /></li>
-                <li><img src="./../assets/images/frog/left.png" /></li> -->
             </ul>
 
             <div class="center">

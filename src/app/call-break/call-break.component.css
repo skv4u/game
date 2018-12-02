@@ -1,0 +1,95 @@
+.user-one {
+    list-style: none;
+    text-align: center;
+}
+
+.user-two {
+    position: absolute;
+    list-style: none;
+}
+
+.user-three {
+    list-style: none;
+    position: absolute;
+    right: 25px;
+}
+
+.user-four {
+    list-style: none;
+    text-align: center;
+    position: relative;
+    top: 170px;
+}
+
+.user-one li,
+.user-four li {
+    display: inline-block;
+    margin-right: -110px;
+    height: 180px;
+    overflow: hidden;
+}
+
+.user-two li,
+.user-three li {
+    display: flex;
+    margin-top: -155px;
+    height: 180px;
+    overflow: hidden;
+}
+
+.user-one li:hover {
+    font-size: 16px;
+    overflow: hidden;
+}
+
+span.block {
+    display: block;
+}
+
+.user-one .outline,
+.user-four .outline {
+    width: 110px;
+    border: 0px solid black;
+    text-align: center;
+    padding: 7px;
+    margin: 7px;
+    background: #FFF;
+}
+
+.user-two .outline,
+.user-three .outline {
+    width: 110px;
+    border: 0px solid black;
+    text-align: center;
+    padding: 7px;
+    margin: 35px;
+    background: #FFF;
+}
+
+.top {
+    text-align: left;
+}
+
+.bottom {
+    text-align: right;
+}
+
+.shadow {
+    box-shadow: 1px 1px 3px #000;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+}
+
+.rounded {
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.mirror-text {
+    /* -moz-transform: scale(1, -1);
+    -webkit-transform: scale(1, -1);
+    -o-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    transform: scale(1, -1); */
+}
