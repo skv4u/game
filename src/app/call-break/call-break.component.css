@@ -24,20 +24,19 @@
 .user-one li,
 .user-four li {
     display: inline-block;
-    margin-right: -110px;
+    margin-right: -90px;
     height: 180px;
     overflow: hidden;
 }
 
 .user-two li,
 .user-three li {
-    display: flex;
-    margin-top: -155px;
-    height: 180px;
-    overflow: hidden;
+    display: grid;
+    margin-top: -150px;
 }
 
-.user-one li:hover {
+.user-one li:hover,
+.user-four li:hover {
     font-size: 16px;
     overflow: hidden;
 }
@@ -48,11 +47,11 @@ span.block {
 
 .user-one .outline,
 .user-four .outline {
-    width: 110px;
+    width: 80px;
     border: 0px solid black;
     text-align: center;
-    padding: 7px;
-    margin: 7px;
+    padding: 10px;
+    margin: 10px;
     background: #FFF;
 }
 
@@ -65,6 +64,12 @@ span.block {
     margin: 35px;
     background: #FFF;
 }
+
+
+/* .user-two li:hover,
+.user-three li:hover {
+    height: 200px;
+} */
 
 .top {
     text-align: left;
@@ -92,4 +97,29 @@ span.block {
     -o-transform: scale(1, -1);
     -ms-transform: scale(1, -1);
     transform: scale(1, -1); */
+}
+
+.thikri {
+    color: #fc0808;
+}
+
+.laalpan {
+    color: #fc0808;
+}
+
+.kalapan {
+    color: #000000;
+}
+
+.chidiya {
+    color: #000000;
+}
+
+.inline {
+    display: inline;
+    margin-left: 5px;
+}
+
+.user-one div {
+    padding: 5px;
 }
