@@ -1,24 +1,28 @@
 .user-one {
     list-style: none;
     text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
 .user-two {
     position: absolute;
     list-style: none;
+    top: 250px;
 }
 
 .user-three {
     list-style: none;
     position: absolute;
     right: 25px;
+    top: 250px;
 }
 
 .user-four {
     list-style: none;
     text-align: center;
     position: relative;
-    top: 170px;
+    top: 190px;
 }
 
 .user-one li,
@@ -46,7 +50,8 @@ span.block {
 }
 
 .user-one .outline,
-.user-four .outline {
+.user-four .outline,
+.center .outline {
     width: 80px;
     border: 0px solid black;
     text-align: center;
@@ -89,14 +94,6 @@ span.block {
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
-}
-
-.mirror-text {
-    /* -moz-transform: scale(1, -1);
-    -webkit-transform: scale(1, -1);
-    -o-transform: scale(1, -1);
-    -ms-transform: scale(1, -1);
-    transform: scale(1, -1); */
 }
 
 .thikri {

@@ -79,12 +79,25 @@ export class CallBreakComponent implements OnInit {
   user2: any[] = [];
   user3: any[] = [];
   user4: any[] = [];
+
+  selectedTheme:string = "./assets/images/cardback.jpg";
+
   constructor(private commonService: CommonService) { }
 
   ngOnInit() {
-    console.log(this.cards.length);
+    // console.log(this.cards.length);
     this.suffleCards();
-
+    this.suffleTheme();
+  }
+  suffleTheme(){
+    let themeList:string[] = [
+      "./assets/images/cardback.jpg",
+      "./assets/images/cardback_blue.jpg",
+      "./assets/images/cardback_red_blue.jpg",
+      "./assets/images/cardback_red1.png"
+    ];
+    themeList = this.commonService.shuffle(themeList);
+    this.selectedTheme = themeList[0];
   }
   suffleCards() {
     // for (let i in this.cards) {
@@ -94,7 +107,6 @@ export class CallBreakComponent implements OnInit {
     //   this.cards[j] = tmp;
     // }
     this.cards = this.commonService.shuffle(this.cards);
-
     let user1: any[] = this.cards.slice(0, 13);
     let user2: any[] = this.cards.slice(13, 26);
     let user3: any[] = this.cards.slice(26, 39);
