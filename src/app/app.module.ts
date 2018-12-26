@@ -21,6 +21,7 @@ import { FrogPuzzleComponent } from './frog-puzzle/frog-puzzle.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CallBreakComponent } from './call-break/call-break.component';
+import { TeenPattiComponent } from './teen-patti/teen-patti.component';
 
 //Route Paths
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'scrumble-word', component: ScrumbleWordComponent },
   { path: 'frog-puzzle', component: FrogPuzzleComponent },
   { path: 'call-break', component: CallBreakComponent },
+  { path: 'teen-patti', component: TeenPattiComponent },
   { path: '**', redirectTo: 'home' }
 ];
 
@@ -49,7 +51,8 @@ const routes: Routes = [
     FrogPuzzleComponent,
     CallBreakComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    TeenPattiComponent
   ],
   imports: [
     BrowserModule,

@@ -79,9 +79,25 @@ export class CallBreakComponent implements OnInit {
   user2: any[] = [];
   user3: any[] = [];
   user4: any[] = [];
-
-  selectedTheme:string = "./assets/images/cardback.jpg";
-
+  eachUserCardCount = [
+    { "count": 1, "isSelected": false },
+    { "count": 2, "isSelected": false },
+    { "count": 3, "isSelected": false },
+    { "count": 4, "isSelected": false },
+    { "count": 5, "isSelected": false },
+    { "count": 6, "isSelected": false },
+    { "count": 7, "isSelected": false },
+    { "count": 8, "isSelected": false },
+    { "count": 9, "isSelected": false },
+    { "count": 10, "isSelected": false },
+    { "count": 11, "isSelected": false },
+    { "count": 12, "isSelected": false },
+    { "count": 13, "isSelected": false }
+  ];
+  selectedTheme: string = "./assets/images/cardback.jpg";
+  blankCard: string = "./assets/images/cards/blank.png";
+  currentList: any[] = [];
+  isBidVisible: boolean = true;
   constructor(private commonService: CommonService) { }
 
   ngOnInit() {
@@ -89,8 +105,8 @@ export class CallBreakComponent implements OnInit {
     this.suffleCards();
     this.suffleTheme();
   }
-  suffleTheme(){
-    let themeList:string[] = [
+  suffleTheme() {
+    let themeList: string[] = [
       "./assets/images/cardback.jpg",
       "./assets/images/cardback_blue.jpg",
       "./assets/images/cardback_red_blue.jpg",
@@ -128,7 +144,7 @@ export class CallBreakComponent implements OnInit {
     this.user3 = user3;
     this.user4 = user4;
 
-    console.log(this.user1);
+    // console.log(this.user1);
     // this.cards = this.cards.sort(a,b,function(){})
     // this.cards = this.cards.sort((a, b) => a.type - b.type);
     // console.log(this.cards);
@@ -153,8 +169,185 @@ export class CallBreakComponent implements OnInit {
     }
     return finalList;
   }
-  selectCard(card: any) {
-    console.log(card);
+  selectCard(card: any, user: string) {
+    // console.log(card);
+    // this.currentList = [
+    //   { "name": "2", "type": "laalpan", "priority": 13, "symbol": "&hearts;" },
+    //   { "name": "2", "type": "kalapan", "priority": 13, "symbol": "&spades;" },
+    //   { "name": "2", "type": "thikri", "priority": 13, "symbol": "&diams;" },
+    //   { "name": "2", "type": "chidiya", "priority": 13, "symbol": "&clubs;" }
+    // ];
+    card["user"] = user;
+    let currentList: any[] = [card];
+
+    this.user4 = this.removeCard(this.user4, card);
+
+
+    let systemCard: any = this.selectSingleCardToPlay(card, this.user3, currentList);
+    systemCard["user"] = "user3";
+    currentList.push(systemCard);
+    this.user3 = this.removeCard(this.user3, systemCard);
+
+    systemCard = this.selectSingleCardToPlay(card, this.user1, currentList);
+    systemCard["user"] = "user1";
+    currentList.push(systemCard);
+    this.user1 = this.removeCard(this.user1, systemCard);
+
+
+    systemCard = this.selectSingleCardToPlay(card, this.user2, currentList);
+    systemCard["user"] = "user2";
+    currentList.push(systemCard);
+    this.user2 = this.removeCard(this.user2, systemCard);
+
+    this.currentList = currentList;
+
+    // console.log(currentList);
+    setTimeout(() => {
+      this.winnerData();
+    }, 2000);
+
+  }
+  winnerLogList: any[] = [];
+  userStat = {
+    "handCount": {
+      "user1": 0,
+      "user2": 0,
+      "user3": 0,
+      "user4": 0
+    },
+    "bidCount": {
+      "user1": 0,
+      "user2": 0,
+      "user3": 0,
+      "user4": 0
+    }
+  }
+  winnerData() {
+    let winner = this.selectTopPriorityCard(this.currentList);
+    // console.log(winner.user);
+    this.winnerLogList.push(winner);
+    this.userStat[winner.user]++;
+
   }
 
+  removeCard(list: any, rmcard: any) {
+    // console.log(list,rmcard)
+    return list.filter(v => !(rmcard.name == v.name && rmcard.type == v.type))
+  }
+
+  selectSingleCardToPlay(currentCard: any, cards: any, currentList: any) {
+    let list: any[] = [];
+    let priority: number[];
+    // if (currentList.length) {
+    // priority = currentList.filter(v => v.priority);
+    list = cards.filter(v => v.type == currentCard.type);
+
+    if (list.length == 0) {
+      //card Not available user trump card
+      return this.selectLastPriorityCard(cards);
+    }
+    else {
+      let flag: boolean = this.isTopperCardAvailable(list, currentList);
+      // console.log(list);
+      if (flag) {
+        return this.selectTopPriorityCard(list);
+      }
+      else {
+        return this.selectLastPriorityCard(list);
+      }
+    }
+    // } else {
+    //   priority = [currentCard.priority];
+    //   list = cards.filter(v => v.type == currentCard.type);
+    //   if (list.length == 0) {
+    //     //card Not available user trump card
+    //   }
+    //   else {
+    //     list = this.selectTopPriorityCard(list);
+
+    //   }
+    // }
+    // return list;
+  }
+  isTopperCardAvailable(list: any, currentList: any) {
+    let flag: boolean = false;
+    // console.log(list,currentList);
+    let topestCardFromCurrentList = this.selectTopPriorityCard(currentList);
+    for (let m of list) {
+      if (m.priority < topestCardFromCurrentList.priority) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  selectTopPriorityCard(list: any) {
+    let top: any = list[0];
+    for (let i = 1; i < list.length; i++) {
+      if (top.priority > list[i].priority) {
+        top = list[i];
+      }
+    }
+    return top;
+  }
+  selectLastPriorityCard(list: any) {
+    let top: any = list[0];
+    for (let i = 1; i < list.length; i++) {
+      if (top.priority < list[i].priority) {
+        top = list[i];
+      }
+    }
+    return top;
+  }
+  userBidSelection(index: number) {
+    for (let m of this.eachUserCardCount) {
+      m.isSelected = false;
+    }
+    this.eachUserCardCount[index].isSelected = true;
+  }
+  // user4Bid:number;
+  userBid() {
+    for (let m of this.eachUserCardCount) {
+      if (m.isSelected) {
+        this.userStat.bidCount.user4 = m.count;
+        break;
+      }
+    }
+    // console.log(this.user4Bid)
+    this.userStat.bidCount.user3 = this.systemBid(this.user3);
+    this.userStat.bidCount.user1 = this.systemBid(this.user1);
+    this.userStat.bidCount.user2 = this.systemBid(this.user2);
+    this.isBidVisible = false;
+    console.log(this.userStat);
+  }
+  systemBid(list: any) {
+    console.log(list);
+    let count: number = 0;
+    let tempList: any[] = [];
+    let finalList: any[] = [];
+    let sequenceList = ["thikri", "chidiya", "laalpan", "kalapan"];
+
+    for (let seq of sequenceList) {
+      tempList = [];
+      for (let m of list) {
+        if (seq == m.type) {
+          tempList.push(m);
+        }
+      }
+      if (tempList.length) {
+        count = count + this.getSystemCountCardWise(tempList);
+      }
+
+    }
+    return count == 0 ? 1 : count;
+  }
+  getSystemCountCardWise(tempList) {
+    let count: number = 0;
+    for (let m of tempList) {
+      if (m.priority == 1 || m.priority == 2) {
+        count++;
+      }
+    }
+    return count;
+  }
 }

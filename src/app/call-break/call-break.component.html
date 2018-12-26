@@ -2,87 +2,110 @@
     <app-header></app-header>
     <section>
         <div style="width:90%">
-            <ul class="user-one">
-                <li *ngFor="let m of user4 let i=index" [class]="m.type" (click)="selectCard(m)">
-                    <div> <img [src]="selectedTheme" alt=""> </div>
+            <ul class="user-one" *ngIf="user1.length">
+                <li *ngFor="let m of user1">
+                    <div><img [src]="selectedTheme" alt=""></div>
+                </li>
+
+            </ul>
+            <ul *ngIf="!user1.length">
+                <li>
+                    <div><img [src]="blankCard" alt=""></div>
                 </li>
             </ul>
+            <div class="user1-text">User1, Bid:{{userStat.bidCount.user1}}, Hand:{{userStat.handCount.user1}}</div>
             <ul class="user-two">
-                <li *ngFor="let m of user1 let i=index" [class]="m.type" (click)="selectCard(m)">
-                    <!-- <div class="outline shadow rounded">
-                        <div class="top"><span class="block">{{m.name}}</span><span class="block" [innerHTML]="m.symbol"></span></div>
-                        <h1 [innerHTML]="m.symbol"></h1>
-                        <div class="bottom"><span class="block" [innerHTML]="m.symbol"></span><span class="block">{{m.name}}</span></div>
-                    </div> -->
-                    <div> <img [src]="selectedTheme" alt=""> </div>
+                <li *ngFor="let m of user2">
+                    <div><img [src]="selectedTheme" alt=""></div>
                 </li>
             </ul>
+            <div class="user2-text">User2, Bid:{{userStat.bidCount.user2}}, Hand:{{userStat.handCount.user2}}</div>
             <ul class="user-three">
-                <li *ngFor="let m of user3 let i=index" [class]="m.type" (click)="selectCard(m)">
-                    <div> <img [src]="selectedTheme" alt=""> </div>
+                <li *ngFor="let m of user3">
+                    <div><img [src]="selectedTheme" alt=""></div>
                 </li>
             </ul>
-            <ul class="user-four">
-
-                <li *ngFor="let m of user1 let i=index" [class]="m.type" (click)="selectCard(m)">
+            <div class="user3-text">User3, Bid:{{userStat.bidCount.user3}}, Hand:{{userStat.handCount.user3}}</div>
+            <ul class="user-four" *ngIf="user4.length">
+                <li *ngFor="let m of user4 let i=index" [class]="m.type" (click)="selectCard(m,'user4')">
                     <div class="outline shadow rounded">
-                        <div class="top"><span class="block">{{m.name}}</span><span class="block" [innerHTML]="m.symbol"></span></div>
+                        <div class="top">
+                            <span class="block">{{m.name}}</span>
+                            <span class="block" [innerHTML]="m.symbol"></span>
+                        </div>
                         <h1 [innerHTML]="m.symbol"></h1>
-                        <div class="bottom"><span class="block" [innerHTML]="m.symbol"></span><span class="block">{{m.name}}</span></div>
+                        <div class="bottom">
+                            <span class="block" [innerHTML]="m.symbol"></span>
+                            <span class="block">{{m.name}}</span>
+                        </div>
                     </div>
+
                 </li>
             </ul>
-            <div class="center">
-                <div class="outline shadow rounded" style="
-            top: 32%;
-            position: absolute;
-            left: 44%;
-        ">
-                    <div class="top"><span class="block">A</span><span class="block">A</span></div>
-                    <h1 _ngcontent-c1="">A</h1>
-                    <div class="bottom"><span class="block">A</span><span class="block">A</span></div>
+            <ul *ngIf="!user4.length">
+                <li>
+                    <div><img [src]="blankCard" alt=""></div>
+                </li>
+            </ul>
+            <div class="user4-text">User4, Bid:{{userStat.bidCount.user4}}, Hand:{{userStat.handCount.user4}}</div>
+            <div class="center" *ngIf="currentList.length">
+                <div class="outline shadow rounded {{currentList[3].type}}" style="top: 32%; position: absolute; left: 44%;">
+                    <div class="top">
+                        <span class="block">{{currentList[3].name}}</span>
+                        <span class="block" [innerHTML]="currentList[3].symbol"></span>
+                    </div>
+                    <h1 [innerHTML]="currentList[3].symbol"></h1>
+                    <div class="bottom">
+                        <span class="block" [innerHTML]="currentList[3].symbol"></span>
+                        <span class="block">{{currentList[3].name}}</span>
+                    </div>
                 </div>
-                <div class="outline shadow rounded" style="
-            top: 38%;
-            position: absolute;
-            left: 38%;
-        ">
-                    <div class="top"><span class="block">A</span><span class="block">A</span></div>
-                    <h1 _ngcontent-c1="">A</h1>
-                    <div class="bottom"><span class="block">A</span><span class="block">A</span></div>
+
+                <div class="outline shadow rounded {{currentList[2].type}}" style="top: 38%; position: absolute; left: 38%;">
+                    <div class="top">
+                        <span class="block">{{currentList[2].name}}</span>
+                        <span class="block" [innerHTML]="currentList[2].symbol"></span>
+                    </div>
+                    <h1 [innerHTML]="currentList[2].symbol"></h1>
+                    <div class="bottom">
+                        <span class="block" [innerHTML]="currentList[2].symbol"></span>
+                        <span class="block">{{currentList[2].name}}</span>
+                    </div>
                 </div>
-                <div class="outline shadow rounded" style="
-            position: absolute;
-            top: 38%;
-            left: 50%;
-        ">
-                    <div class="top"><span class="block">A</span><span class="block">A</span></div>
-                    <h1 _ngcontent-c1="">A</h1>
-                    <div class="bottom"><span class="block">A</span><span class="block">A</span></div>
+
+                <div class="outline shadow rounded {{currentList[1].type}}" style="position: absolute;top: 38%; left: 50%;">
+                    <div class="top">
+                        <span class="block">{{currentList[1].name}}</span>
+                        <span class="block" [innerHTML]="currentList[1].symbol"></span>
+                    </div>
+                    <h1 [innerHTML]="currentList[1].symbol"></h1>
+                    <div class="bottom">
+                        <span class="block" [innerHTML]="currentList[1].symbol"></span>
+                        <span class="block">{{currentList[1].name}}</span>
+                    </div>
                 </div>
-                <div class="outline shadow rounded" style="
-            position: absolute;
-            top: 44%;
-            left: 44%;
-        ">
-                    <div class="top"><span class="block">A</span><span class="block">A</span></div>
-                    <h1 _ngcontent-c1="">A</h1>
-                    <div class="bottom"><span class="block">A</span><span class="block">A</span></div>
+
+                <div class="outline shadow rounded {{currentList[0].type}}" style="position: absolute;top: 44%;left: 44%;">
+                    <div class="top">
+                        <span class="block">{{currentList[0].name}}</span>
+                        <span class="block" [innerHTML]="currentList[0].symbol"></span>
+                    </div>
+                    <h1 [innerHTML]="currentList[0].symbol"></h1>
+                    <div class="bottom">
+                        <span class="block" [innerHTML]="currentList[0].symbol"></span>
+                        <span class="block">{{currentList[0].name}}</span>
+                    </div>
                 </div>
+
             </div>
-            <!-- 
-            <div>
-                <div class="current card1">1</div>
-                <div class="current card2">2</div>
-                <div class="current card3">3</div>
-                <div class="current card4">4</div>
-            </div> -->
 
-            <!-- <div class="center">
-                <button class="button" (click)="start()">START</button>
-            </div> -->
+            <div class="bid" *ngIf="isBidVisible">
+                <button class="bid-btn" *ngFor="let m of eachUserCardCount; let i=index" [class.active]="m.isSelected" (click)="userBidSelection(i)">
+                    {{m.count}}
+                </button>
+                <button class="bid-btn" (click)="userBid()">BID</button>
+            </div>
         </div>
-
     </section>
     <footer>
 
