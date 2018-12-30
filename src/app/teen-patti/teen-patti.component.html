@@ -1,3 +1,42 @@
-<p>
-  teen-patti works!
-</p>
+<div class="container">
+    <app-header></app-header>
+    <section>
+        <div class="split left">
+            <table class="table table-bordered">
+                <tr>
+                    <td></td>
+                    <td>
+                        <img class="user-card" [src]="path+cards[2].card" />
+                        <img class="user-card" [src]="path+cards[0].card" />
+                        <img class="user-card" [src]="path+cards[1].card" /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="card-52">
+                        <img *ngFor="let m of card52" class="{{shuffleClass}}" [src]="path+'blue_back.png'" />
+
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <img class="user-card" [src]="path+cards[2].card" />
+                        <img class="user-card" [src]="path+cards[0].card" />
+                        <img class="user-card" [src]="path+cards[1].card" />
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="split right">
+            right container
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+
+</div>

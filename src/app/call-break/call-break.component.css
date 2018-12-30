@@ -188,3 +188,28 @@ span.block {
     margin-left: -115px;
     color: #1626f5;
 }
+
+.slide-winner {
+    transition: 1s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.slide-winner.leftside {
+    left: -1200px;
+}
+
+.slide-winner.topside {
+    top: -1200px;
+}
+
+.slide-winner.bottomside {
+    bottom: -1200px;
+}
+
+.slide-winner.rightside {
+    right: -1200px;
+}

@@ -98,6 +98,9 @@ export class CallBreakComponent implements OnInit {
   blankCard: string = "./assets/images/cards/blank.png";
   currentList: any[] = [];
   isBidVisible: boolean = true;
+  winnerSlide: string = "";
+  winnerLogList: any[] = [];
+  
   constructor(private commonService: CommonService) { }
 
   ngOnInit() {
@@ -170,6 +173,7 @@ export class CallBreakComponent implements OnInit {
     return finalList;
   }
   selectCard(card: any, user: string) {
+    this.winnerSlide = "";
     // console.log(card);
     // this.currentList = [
     //   { "name": "2", "type": "laalpan", "priority": 13, "symbol": "&hearts;" },
@@ -177,27 +181,27 @@ export class CallBreakComponent implements OnInit {
     //   { "name": "2", "type": "thikri", "priority": 13, "symbol": "&diams;" },
     //   { "name": "2", "type": "chidiya", "priority": 13, "symbol": "&clubs;" }
     // ];
+    if (this.isBidVisible) return;
+    if (this.currentList.length) return;
     card["user"] = user;
     let currentList: any[] = [card];
 
     this.user4 = this.removeCard(this.user4, card);
 
+    let systemCard3: any = this.selectSingleCardToPlay(card, this.user3, currentList);
+    systemCard3["user"] = "user3";
+    currentList.push(systemCard3);
+    this.user3 = this.removeCard(this.user3, systemCard3);
 
-    let systemCard: any = this.selectSingleCardToPlay(card, this.user3, currentList);
-    systemCard["user"] = "user3";
-    currentList.push(systemCard);
-    this.user3 = this.removeCard(this.user3, systemCard);
+    let systemCard1: any = this.selectSingleCardToPlay(card, this.user1, currentList);
+    systemCard1["user"] = "user1";
+    currentList.push(systemCard1);
+    this.user1 = this.removeCard(this.user1, systemCard1);
 
-    systemCard = this.selectSingleCardToPlay(card, this.user1, currentList);
-    systemCard["user"] = "user1";
-    currentList.push(systemCard);
-    this.user1 = this.removeCard(this.user1, systemCard);
-
-
-    systemCard = this.selectSingleCardToPlay(card, this.user2, currentList);
-    systemCard["user"] = "user2";
-    currentList.push(systemCard);
-    this.user2 = this.removeCard(this.user2, systemCard);
+    let systemCard2: any = this.selectSingleCardToPlay(card, this.user2, currentList);
+    systemCard2["user"] = "user2";
+    currentList.push(systemCard2);
+    this.user2 = this.removeCard(this.user2, systemCard2);
 
     this.currentList = currentList;
 
@@ -207,7 +211,6 @@ export class CallBreakComponent implements OnInit {
     }, 2000);
 
   }
-  winnerLogList: any[] = [];
   userStat = {
     "handCount": {
       "user1": 0,
@@ -223,13 +226,39 @@ export class CallBreakComponent implements OnInit {
     }
   }
   winnerData() {
-    let winner = this.selectTopPriorityCard(this.currentList);
-    // console.log(winner.user);
+    console.log(this.currentList);
+    let winner = this.selectWinnerPriorityCard(this.currentList);
+    console.log(winner);
     this.winnerLogList.push(winner);
-    this.userStat[winner.user]++;
-
+    this.userStat["handCount"][winner.user]++;
+    this.winnerSlide = "slide-winner";
+    let slidetype : string = "";
+    if(winner.user == 'user1'){
+      slidetype = "topside";
+    }else if(winner.user == 'user2'){
+      slidetype = "leftside";
+    }else if(winner.user == 'user3'){
+      slidetype = "rightside";
+    }
+    else{
+      slidetype = "bottomside";
+    }
+    setTimeout(() => {
+      this.winnerSlide = "slide-winner " + slidetype;
+      setTimeout(()=>{
+        this.currentList = [];
+      },500);
+    }, 700)
   }
-
+  selectWinnerPriorityCard(list: any) {
+    let top: any = list[0];
+    for (let i = 1; i < list.length; i++) {
+      if (top.priority > list[i].priority && top.type == list[i].type) {
+        top = list[i];
+      }
+    }
+    return top;
+  }
   removeCard(list: any, rmcard: any) {
     // console.log(list,rmcard)
     return list.filter(v => !(rmcard.name == v.name && rmcard.type == v.type))
@@ -318,7 +347,7 @@ export class CallBreakComponent implements OnInit {
     this.userStat.bidCount.user1 = this.systemBid(this.user1);
     this.userStat.bidCount.user2 = this.systemBid(this.user2);
     this.isBidVisible = false;
-    console.log(this.userStat);
+    // console.log(this.userStat);
   }
   systemBid(list: any) {
     console.log(list);

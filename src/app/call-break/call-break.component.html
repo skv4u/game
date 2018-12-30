@@ -6,7 +6,6 @@
                 <li *ngFor="let m of user1">
                     <div><img [src]="selectedTheme" alt=""></div>
                 </li>
-
             </ul>
             <ul *ngIf="!user1.length">
                 <li>
@@ -14,12 +13,14 @@
                 </li>
             </ul>
             <div class="user1-text">User1, Bid:{{userStat.bidCount.user1}}, Hand:{{userStat.handCount.user1}}</div>
+
             <ul class="user-two">
                 <li *ngFor="let m of user2">
                     <div><img [src]="selectedTheme" alt=""></div>
                 </li>
             </ul>
             <div class="user2-text">User2, Bid:{{userStat.bidCount.user2}}, Hand:{{userStat.handCount.user2}}</div>
+
             <ul class="user-three">
                 <li *ngFor="let m of user3">
                     <div><img [src]="selectedTheme" alt=""></div>
@@ -48,20 +49,10 @@
                 </li>
             </ul>
             <div class="user4-text">User4, Bid:{{userStat.bidCount.user4}}, Hand:{{userStat.handCount.user4}}</div>
-            <div class="center" *ngIf="currentList.length">
-                <div class="outline shadow rounded {{currentList[3].type}}" style="top: 32%; position: absolute; left: 44%;">
-                    <div class="top">
-                        <span class="block">{{currentList[3].name}}</span>
-                        <span class="block" [innerHTML]="currentList[3].symbol"></span>
-                    </div>
-                    <h1 [innerHTML]="currentList[3].symbol"></h1>
-                    <div class="bottom">
-                        <span class="block" [innerHTML]="currentList[3].symbol"></span>
-                        <span class="block">{{currentList[3].name}}</span>
-                    </div>
-                </div>
+            <div class="center {{winnerSlide}}" *ngIf="currentList.length">
 
-                <div class="outline shadow rounded {{currentList[2].type}}" style="top: 38%; position: absolute; left: 38%;">
+
+                <div class="outline shadow rounded {{currentList[2].type}}" style="top: 32%; position: absolute; left: 44%;">
                     <div class="top">
                         <span class="block">{{currentList[2].name}}</span>
                         <span class="block" [innerHTML]="currentList[2].symbol"></span>
@@ -72,7 +63,17 @@
                         <span class="block">{{currentList[2].name}}</span>
                     </div>
                 </div>
-
+                <div class="outline shadow rounded {{currentList[3].type}}" style="top: 38%; position: absolute; left: 38%;">
+                    <div class="top">
+                        <span class="block">{{currentList[3].name}}</span>
+                        <span class="block" [innerHTML]="currentList[3].symbol"></span>
+                    </div>
+                    <h1 [innerHTML]="currentList[3].symbol"></h1>
+                    <div class="bottom">
+                        <span class="block" [innerHTML]="currentList[3].symbol"></span>
+                        <span class="block">{{currentList[3].name}}</span>
+                    </div>
+                </div>
                 <div class="outline shadow rounded {{currentList[1].type}}" style="position: absolute;top: 38%; left: 50%;">
                     <div class="top">
                         <span class="block">{{currentList[1].name}}</span>
