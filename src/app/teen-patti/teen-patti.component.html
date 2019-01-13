@@ -4,29 +4,112 @@
         <div class="split left">
             <table class="table table-bordered">
                 <tr>
-                    <td></td>
                     <td>
-                        <img class="user-card" [src]="path+cards[2].card" />
-                        <img class="user-card" [src]="path+cards[0].card" />
-                        <img class="user-card" [src]="path+cards[1].card" /></td>
-                    <td></td>
+                        <!-- <button class="button" (click)=" isSuffling = true; startGame()">Re-Shuffle</button> -->
+                    </td>
+                    <td>
+                        <div *ngIf="userA.length">
+                            <div *ngIf="isShow">
+                                <img *ngFor="let m of userA" class="user-card" [src]="path+m.card" />
+                            </div>
+                            <div *ngIf="!isShow">
+                                <img *ngFor="let m of userA" class="user-card" [src]="selectedTheme" />
+                            </div>
+
+                            <div class="winner-label">
+                                Winner
+                            </div>
+                        </div>
+                        <div *ngIf="!userA.length" style="height:140px"></div>
+                    </td>
+                    <td>
+                        <div>Rs : {{mainBalance.userA}}</div>
+                        <!-- <input type="text" class="form-control" placeholder="Bid Amount"> -->
+                        <select [(ngModel)]="userAInput" style="width: 70px;">
+                            <option>5</option>
+                            <option>10</option>
+                            <option>20</option>
+                            <option>50</option>
+                            <option>100</option>
+                            <option>500</option>
+                        </select>
+                        <button class="btn btn-primary" type="button" id="button-addon2">Bett</button>
+                    </td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td class="card-1">
+                        <div *ngIf="!isSuffling">
+                            <img [src]="selectedTheme" />
+                        </div>
+                    </td>
                     <td class="card-52">
-                        <img *ngFor="let m of card52" class="{{shuffleClass}}" [src]="path+'blue_back.png'" />
+                        <div class="coin-container">
+                            <div class="coin silver" *ngFor="let m of amount.userA">
+                                <p>{{m}}</p>
+                            </div>
+                        </div>
+
+                        <div *ngIf="isSuffling">
+                            <img *ngFor="let m of card52" class="{{shuffleClass}}" [src]="selectedTheme" />
+                        </div>
+                        <div *ngIf="isStartBidVisible">
+
+                            Select bid amount :
+                            <select [(ngModel)]="startAmount" style="width: 70px;">
+                                <option>5</option>
+                                <option>10</option>
+                                <option>20</option>
+                                <option>50</option>
+                                <option>100</option>
+                                <option>500</option>
+                            </select>
+                            <!-- <button class="btn">START</button> -->
+                            <button class="button" (click)="isSuffling = true; startGame()">START</button>
+
+
+                        </div>
+                        <button class="button" (click)="isShow=true">Show</button>
+
+                        <div class="coin-container">
+                            <div class="coin silver" *ngFor="let m of amount.userB">
+                                <p>{{m}}</p>
+                            </div>
+                        </div>
 
                     </td>
-                    <td></td>
+                    <td>
+                        <!-- <button class="button" (click)="isShow=true">Show</button> -->
+                    </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>
-                        <img class="user-card" [src]="path+cards[2].card" />
-                        <img class="user-card" [src]="path+cards[0].card" />
-                        <img class="user-card" [src]="path+cards[1].card" />
+                        <div *ngIf="userB.length">
+                            <div>
+                                <img *ngFor="let m of userB" class="user-card" [src]="path+m.card" />
+                            </div>
+                            <!-- <div>
+                                <img *ngFor="let m of userB" class="user-card" [src]="selectedTheme" />
+                            </div> -->
+                            <div class="winner-label">
+                                Winner
+                            </div>
+                        </div>
+                        <div *ngIf="!userB.length" style="height:140px"></div>
                     </td>
-                    <td></td>
+                    <td>
+                        <div>Rs : {{mainBalance.userB}}</div>
+                        <!-- <input type="text" class="form-control" placeholder="Bid Amount"> -->
+                        <select [(ngModel)]="userBInput" style="width: 70px;">
+                            <option>5</option>
+                            <option>10</option>
+                            <option>20</option>
+                            <option>50</option>
+                            <option>100</option>
+                            <option>500</option>
+                        </select>
+                        <button class="btn btn-primary" type="button" id="button-addon2">Bett</button>
+                    </td>
                 </tr>
             </table>
         </div>

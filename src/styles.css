@@ -254,6 +254,14 @@ th {
     border-radius: 4px;
 }
 
+.btn-group {
+    position: absolute;
+    /* top: 40px; */
+    right: 3%;
+    padding: 0;
+    margin-top: -26px;
+}
+
 .numberbox {
     font-size: 64px;
     width: 95%;
@@ -420,4 +428,21 @@ th {
 
 button {
     cursor: pointer
+}
+
+.form-control {
+    /* display: block; */
+    width: 64%;
+    /* height: calc(2.25rem + 2px); */
+    padding: 2px;
+    /* font-size: 1rem; */
+    /* line-height: 1.5; */
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    margin: 5px;
+    padding-right: 28px;
 }

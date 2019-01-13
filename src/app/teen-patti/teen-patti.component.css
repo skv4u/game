@@ -10,6 +10,129 @@ img.user-card {
     overflow: hidden;
 }
 
+.card-1 img {
+    height: 140px;
+}
+
 .suffle-91 {
     margin-left: -91px !important
+}
+
+.distribute-top {
+    position: absolute;
+    top: 20px;
+}
+
+.distribute-bottom {
+    position: absolute;
+    top: 342px;
+}
+
+.table td:first-child,
+.table td:last-child {
+    width: 15%;
+}
+
+
+/* Coin Css */
+
+.coin p {
+    font-family: georgia;
+    font-style: italic;
+    position: absolute;
+    font-size: 18px;
+    z-index: 700;
+    width: 52px;
+    margin-top: 12px;
+}
+
+.coin.silver p {
+    color: rgba(160, 160, 160, 1);
+}
+
+.coin {
+    cursor: pointer;
+    content: "";
+    width: 52px;
+    height: 52px;
+    display: inline-block;
+    position: relative;
+    margin: 5px;
+    top: 6px;
+    border-radius: 50px;
+    z-index: 500;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .1);
+    text-align: center;
+}
+
+.coin:after {
+    content: "";
+    width: 42px;
+    height: 42px;
+    display: block;
+    top: 4px;
+    left: 4px;
+    position: absolute;
+    border-radius: 50px;
+    z-index: 600;
+}
+
+.coin:before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    border-radius: 50px;
+    z-index: 500;
+}
+
+.silver {
+    background: linear-gradient(45deg, rgba(160, 160, 160, 1) 0%, rgba(232, 232, 232, 1) 56%);
+}
+
+.silver:before {
+    background: linear-gradient(45deg, rgba(181, 181, 181, 1) 0%, rgba(252, 252, 252, 1) 56%, rgba(232, 232, 232, 1) 96%);
+    border: 1px solid rgba(181, 181, 181, 1);
+}
+
+.silver:after {
+    background: linear-gradient(45deg, rgba(181, 181, 181, 1) 0%, rgba(252, 252, 252, 1) 56%, rgba(232, 232, 232, 1) 96%);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(160, 160, 160, 0.3);
+    border-right: 1px solid rgba(160, 160, 160, 0.5);
+    box-shadow: inset 0px 0px 2px 2px rgba(150, 150, 150, .05);
+}
+
+.silver:hover:after {
+    background: linear-gradient(45deg, rgba(181, 181, 181, 1) 0%, rgba(252, 252, 252, 1) 38%, rgba(232, 232, 232, 1) 96%);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(160, 160, 160, 0.3);
+    border-right: 1px solid rgba(160, 160, 160, 0.5);
+    box-shadow: inset 0px 0px 2px 2px rgba(150, 150, 150, .05);
+}
+
+
+/* end of coin css */
+
+.coin-container {
+    overflow: auto;
+    white-space: nowrap;
+    width: 613px;
+    height: 90px;
+}
+
+.winner-label {
+    position: absolute;
+    margin-top: -125px;
+    height: 23px;
+    width: 30px;
+    border: 2px solid #2ece5f;
+    border-radius: 50%;
+    padding: 30px 30px 30px 20px;
+    color: #29c529;
+    font-weight: bold;
+    transform: rotate(-30deg);
 }
