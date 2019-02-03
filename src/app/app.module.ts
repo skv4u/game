@@ -22,6 +22,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CallBreakComponent } from './call-break/call-break.component';
 import { TeenPattiComponent } from './teen-patti/teen-patti.component';
+import { NumberMagicComponent } from './number-magic/number-magic.component';
 
 //Route Paths
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'frog-puzzle', component: FrogPuzzleComponent },
   { path: 'call-break', component: CallBreakComponent },
   { path: 'teen-patti', component: TeenPattiComponent },
+  { path: 'number-magic', component: NumberMagicComponent },
   { path: '**', redirectTo: 'home' }
 ];
 
@@ -52,7 +54,8 @@ const routes: Routes = [
     CallBreakComponent,
     HeaderComponent,
     FooterComponent,
-    TeenPattiComponent
+    TeenPattiComponent,
+    NumberMagicComponent
   ],
   imports: [
     BrowserModule,

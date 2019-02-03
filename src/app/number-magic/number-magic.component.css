@@ -1,0 +1,41 @@
+.ul-list {
+    list-style: none;
+    /* height: 155px; */
+    width: 254px;
+    display: inline-block;
+    background: #fff;
+    margin: 15px;
+    padding: 13px;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+}
+
+.ul-list.active {
+    border: 2px solid #e28e8e;
+}
+
+.li-list {
+    display: inline-block;
+    padding: 5px;
+}
+
+mark {
+    display: block;
+    padding: 8px;
+    text-align: center;
+    font-size: 23px;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+ul.rule,
+ul.answer {
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.rule li {
+    line-height: 25px;
+}

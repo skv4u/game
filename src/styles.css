@@ -446,3 +446,7 @@ button {
     margin: 5px;
     padding-right: 28px;
 }
+
+button.btn.btn-primary:disabled {
+    background-color: #64a1d6;
+}
