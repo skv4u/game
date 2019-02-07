@@ -108,6 +108,9 @@ export class ScrumbleWordComponent implements OnInit {
       return v.char
     }).join("");
   }
+  start(){
+    
+  }
 }
 
 

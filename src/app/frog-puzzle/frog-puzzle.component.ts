@@ -9,7 +9,7 @@ export class FrogPuzzleComponent implements OnInit {
 list:string[] = ['right.png','right.png','right.png','blank.jpg','left.png','left.png','left.png'];
 masterList:string[] = ['right.png','right.png','right.png','blank.jpg','left.png','left.png','left.png'];
 
-imagePath:string = './../assets/images/frog/';
+imagePath:string = './assets/images/frog/';
 
   constructor() { }
 

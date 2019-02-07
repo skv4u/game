@@ -20,7 +20,7 @@ export class MemoryGameComponent implements OnInit {
   // rows:number[]=[1,2,]
   dataList:any[]=[];
   shuffleImageList: string[] = [];
-  imagePath:string = './../assets/images/memory/';
+  imagePath:string = './assets/images/memory/';
   constructor(private cs:CommonService) { }
 
   ngOnInit() {
