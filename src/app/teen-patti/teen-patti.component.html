@@ -16,7 +16,7 @@
                                 <img *ngFor="let m of userA" class="user-card" [src]="selectedTheme" />
                             </div>
 
-                            <div class="winner-label">
+                            <div class="winner-label" *ngIf="winner.userA">
                                 Winner
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                             <option>100</option>
                             <option>500</option>
                         </select>
-                        <button class="btn btn-primary" type="button" id="button-addon2">Bett</button>
+                        <button class="btn btn-primary" type="button" id="button-addon2" [disabled]="isStartBidVisible" (click)="bett('A')">Bett</button>
                     </td>
                 </tr>
                 <tr>
@@ -55,7 +55,7 @@
                         <div *ngIf="isStartBidVisible">
 
                             Select bid amount :
-                            <select [(ngModel)]="startAmount" style="width: 70px;">
+                            <select [(ngModel)]="userAInput" style="width: 70px;">
                                 <option>5</option>
                                 <option>10</option>
                                 <option>20</option>
@@ -91,7 +91,7 @@
                             <!-- <div>
                                 <img *ngFor="let m of userB" class="user-card" [src]="selectedTheme" />
                             </div> -->
-                            <div class="winner-label">
+                            <div class="winner-label" *ngIf="winner.userB">
                                 Winner
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                             <option>100</option>
                             <option>500</option>
                         </select>
-                        <button class="btn btn-primary" type="button" id="button-addon2">Bett</button>
+                        <button class="btn btn-primary" type="button" id="button-addon2" [disabled]="isStartBidVisible" (click)="bett('B')">Bett</button>
                     </td>
                 </tr>
             </table>

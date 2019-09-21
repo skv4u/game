@@ -39,6 +39,10 @@ export class TeenPattiComponent implements OnInit {
   };
   userAInput:string = "5";
   userBInput:string = "5";
+  winner:any = {
+    userA : false,
+    userB:false
+  }
   constructor(private commonService: CommonService) { }
 
 
@@ -92,6 +96,25 @@ export class TeenPattiComponent implements OnInit {
     ];
     themeList = this.commonService.shuffle(themeList);
     this.selectedTheme = themeList[0];
+  }
+  bett(user:string){
+    // console.log(this.userAInput)
+    // console.log(this.userBInput)
+    // if(user == 'B')
+    
+    this.amount.userB.push(this.userBInput)
+    this.mainBalance.userB = this.mainBalance.userB - Number(this.userBInput);
+
+   
+    // else
+    this.systemBid();
+  }
+  systemBid(){
+    setTimeout(()=>{
+      this.amount.userA.push(this.userBInput);
+
+      this.mainBalance.userA = this.mainBalance.userA - Number(this.userBInput);
+    },2000);
   }
 
 }
