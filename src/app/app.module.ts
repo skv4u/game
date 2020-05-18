@@ -24,6 +24,7 @@ import { CallBreakComponent } from './call-break/call-break.component';
 import { TeenPattiComponent } from './teen-patti/teen-patti.component';
 import { NumberMagicComponent } from './number-magic/number-magic.component';
 import { WoodBlockComponent } from './wood-block/wood-block.component';
+import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 
 //Route Paths
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'teen-patti', component: TeenPattiComponent },
   { path: 'number-magic', component: NumberMagicComponent },
   { path: 'wood-block', component: WoodBlockComponent },
+  { path: 'tic-tac-toe', component: TicTacToeComponent },
   { path: '**', redirectTo: 'home' }
 ];
 
@@ -58,7 +60,8 @@ const routes: Routes = [
     FooterComponent,
     TeenPattiComponent,
     NumberMagicComponent,
-    WoodBlockComponent
+    WoodBlockComponent,
+    TicTacToeComponent
   ],
   imports: [
     BrowserModule,

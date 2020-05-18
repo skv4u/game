@@ -1,0 +1,50 @@
+.box {
+    width: 60%;
+    margin: 20px auto;
+}
+
+.box-button {
+    margin: 10px;
+}
+
+.sub-box {
+    display: inline-block;
+    width: 30%;
+    height: 90px;
+    border: 3px solid #fee;
+    /* text-align: center; */
+    margin: 1px;
+    position: relative;
+}
+
+.sub-box span {
+    font-size: 70px;
+    font-weight: 700;
+    position: absolute;
+    left: 35%;
+}
+
+.sub-box span.red {
+    color: #ff0000;
+}
+
+.sub-box span.green {
+    color: #0000ff;
+}
+
+.message {
+    text-align: center;
+    background: #ffeecf;
+    padding: 1px;
+    font-size: 30px;
+    color: #777777;
+    font-weight: bold;
+}
+
+.message.success {
+    color: #05d20c;
+}
+
+.message.lose {
+    color: #b10101;
+}

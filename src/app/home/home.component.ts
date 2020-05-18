@@ -16,7 +16,8 @@ gameList:any[]=[
   {"ID":6,"Name":"Call Break","Description":"Memory Game with flip flop, which will track users memory power","Likes":8,"Dislikes":4,"Comments":10,"Image":"./assets/images/blank.jpg","URL":"call-break"},
   {"ID":7,"Name":"Teen Patti","Description":"Teen Patti Game","Likes":8,"Dislikes":4,"Comments":10,"Image":"./assets/images/blank.jpg","URL":"teen-patti"},
   {"ID":8,"Name":"Number Magic","Description":"Number Magic Game","Likes":8,"Dislikes":4,"Comments":10,"Image":"./assets/images/blank.jpg","URL":"number-magic"},
-  {"ID":9,"Name":"Wood Block","Description":"Wood Block Game","Likes":8,"Dislikes":4,"Comments":10,"Image":"./assets/images/blank.jpg","URL":"wood-block"}
+  {"ID":9,"Name":"Wood Block","Description":"Wood Block Game","Likes":8,"Dislikes":4,"Comments":10,"Image":"./assets/images/blank.jpg","URL":"wood-block"},
+  {"ID":10,"Name":"Tik Tak Toe","Description":"Tik Tak Toe","Likes":8,"Dislikes":4,"Comments":10,"Image":"./assets/images/blank.jpg","URL":"tic-tac-toe"}
 ]
   constructor(public router: Router) { }
 
